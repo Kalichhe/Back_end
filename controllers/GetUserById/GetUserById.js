@@ -10,7 +10,7 @@ const GerUserById = async (req, res) => {
             if (!user) {
                 return res.json({ mensaje: "Usuario no encontrado" });
             } else {
-                const { _id, name, last_name, phone, identification_document, email, city, neighborhood, address, age, gender, password, confirm_password, __v, ...resto } = user._doc;
+                const { _id, last_name, phone, identification_document, city, neighborhood, address, age, gender, password, confirm_password, __v, ...resto } = user._doc;
                 res.json(resto);
             }
         });
