@@ -3,7 +3,7 @@ const bcrypt = require("bcrypt")
 const User = require('/Users/kalic/Desktop/Areas Universidad/5 Semestre/Proyecto I/HabeasDataProject/model/User')
 
 const Register = async (req, res) => {
-    const { name, last_name, phone, email, city, address, gender, password, confirm_password } = req.body;
+    const { name, last_name, phone, identification_document, email, city, neighborhood, address, age, gender, password, confirm_password } = req.body;
 
     User.findOne({ email }).then((user) => {
         if (user) {
@@ -18,9 +18,12 @@ const Register = async (req, res) => {
                         name,
                         last_name,
                         phone,
+                        identification_document,
                         email,
                         city,
+                        neighborhood,
                         address,
+                        age,
                         gender,
                         password: passwordHash,
                         confirm_password: passwordHash,
