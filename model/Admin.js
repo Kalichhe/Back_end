@@ -8,4 +8,4 @@ const adminSchema = new Schema({
     confirm_password: { type: String, required: true }
 });
 
-module.exports = model("Admin", adminSchema);
+module.exports = model("admin", adminSchema);

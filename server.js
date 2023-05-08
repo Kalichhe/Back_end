@@ -13,6 +13,7 @@ app.use(express.json())
 
 app.get("/user/:userId", controllers.GetUserById)
 app.post("/register", controllers.Register)
+app.post("/registerAdmin", controllers.)
 app.post("/login", controllers.Login)
 app.post("/loginAdmin", controllers.LoginAdmin)
 app.get("/administrator/:userId", controllers.GetUserById)
