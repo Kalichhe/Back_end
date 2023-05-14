@@ -2,7 +2,7 @@
 const bcrypt = require("bcrypt")
 const Admin = require('/Users/kalic/Desktop/Areas Universidad/5 Semestre/Proyecto I/HabeasDataProject/model/Admin')
 
-const Register = async (req, res) => {
+const registerAdmin = async (req, res) => {
     const { name, identification_document, email, password, confirm_password } = req.body;
 
     Admin.findOne({ email }).then((admin) => {
@@ -22,7 +22,7 @@ const Register = async (req, res) => {
                         confirm_password: passwordHash,
                     })
 
-                    newUser
+                    newAdmin
                         .save()
                         .then((user) => {
                             res.json({ mensaje: "User created successfully", user })
@@ -35,4 +35,4 @@ const Register = async (req, res) => {
 };
 
 
-module.exports = Register;
+module.exports = registerAdmin;
